@@ -1140,7 +1140,7 @@ App.onPageInit('asset.edit', function(page) {
                     if (assetImg.src !== 'resources/images/svg_add_photo_general.svg') {
                         result.Data.AppPhoto = assetImg.src;
                     }
-                    alert(JSON.stringify(result.Data));
+
                     updateAssetList(result.Data);
                     //setAssetImg(assetImg);
                     init_AssetList();
@@ -3384,7 +3384,6 @@ function saveImg() {
             App.hidePreloader();
             result = typeof(result) == 'string' ? eval("(" + result + ")") : result;
             if (result.MajorCode == "000") {
-                alert(result.Data);
                 TargetAsset.IMG = result.Data;
             } else {
                 App.alert('Something wrong. Photo not saved');
