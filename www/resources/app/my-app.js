@@ -2425,8 +2425,10 @@ function getAssetIcoSrc(asset) {
     if (!ret) {
         var assetList = getAssetList();
         var assetInfo = assetList[asset];
-        if (assetInfo.Photo && pattern.test(assetInfo.Photo)) {
-            ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?' + new Date().getTime();
+        if (assetInfo) {
+            if (assetInfo.Photo && pattern.test(assetInfo.Photo)) {
+                ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?' + new Date().getTime();
+            }
         }
     }
     if (!ret) {
