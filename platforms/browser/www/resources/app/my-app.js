@@ -3317,7 +3317,7 @@ function saveImg() {
             $$('.assets_list li[data-id="' + TargetAsset.IMEI + '"] .item-media img').attr('src', resImg);
             var assetList = getAssetList();
             var asset = assetList[TargetAsset.IMEI];
-            asset.AppPhoto = resImg;
+            asset.Photo = resImg;
             updateAssetList(asset);
             deleteOldImg(TargetAsset.IMEI);
         }
