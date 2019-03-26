@@ -2424,7 +2424,7 @@ function getAssetIcoSrc(asset) {
     }
     if (!ret) {
         var assetList = getAssetList();
-        var assetInfo = assetList[asset];
+        var assetInfo = assetList[Number(asset)];
         if (assetInfo.Photo && pattern.test(assetInfo.Photo)) {
             ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?' + new Date().getTime();
         }
