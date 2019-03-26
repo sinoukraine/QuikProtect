@@ -2424,9 +2424,11 @@ function getAssetIcoSrc(asset) {
     }
     if (!ret) {
         var assetList = getAssetList();
-        var assetInfo = assetList[Number(asset)];
-        if (assetInfo.Photo && pattern.test(assetInfo.Photo)) {
-            ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?' + new Date().getTime();
+        if (assetList) {
+            var assetInfo = assetList[asset];
+            if (assetInfo.Photo && pattern.test(assetInfo.Photo)) {
+                ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?' + new Date().getTime();
+            }
         }
     }
     if (!ret) {
