@@ -1115,12 +1115,14 @@ App.onPageInit('asset.edit', function(page) {
                 console.log(result);
                 if (result.MajorCode == '000') {
                     if (TargetAsset.IMG) {
+
                         deleteOldImg(TargetAsset.IMEI)
                     }
 
                     if (assetImg.src !== 'resources/images/svg_add_photo_general.svg') {
                         result.Data.AppPhoto = assetImg.src;
                     }
+                    alert(JSON.stringify(result.Data));
                     updateAssetList(result.Data);
                     //setAssetImg(assetImg);
                     init_AssetList();
@@ -3364,7 +3366,7 @@ function saveImg() {
             App.hidePreloader();
             result = typeof(result) == 'string' ? eval("(" + result + ")") : result;
             if (result.MajorCode == "000") {
-                console.log(result.Data);
+                alert(result.Data);
                 TargetAsset.IMG = result.Data;
             } else {
                 App.alert('Something wrong. Photo not saved');
