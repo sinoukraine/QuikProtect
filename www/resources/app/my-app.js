@@ -375,15 +375,31 @@ var virtualAssetList = App.virtualList('.assets_list', {
     //List of array items
     items: [],
     height: 88,
+    renderItem: function(index, item) {
+        var photo = getAssetIcoSrc(item.IMEI);
+
+
+        var ret = `
+        <li class="item-link item-content item_asset" data-id="${ item.IMEI }">
+            <div class="item-media"><img src="${ photo }" alt="" /></div>
+            <div class="item-inner">
+            <div class="item-title-row">
+            <div class="item-title">${ item.Name }</div>
+            </div>
+            </div>
+        </li>,
+        `;
+        return ret;
+    },
     // Display the each item using Template7 template parameter
-    template: '<li class="item-link item-content item_asset" data-id="{{IMEI}}">' +
-        '<div class="item-media">{{#if AppPhoto}}<img src="{{AppPhoto}}" alt="">{{else}}<img src="resources/images/svg_asset.svg" alt="">{{/if}} </div>' +
-        '<div class="item-inner">' +
-        '<div class="item-title-row">' +
-        '<div class="item-title">{{Name}}</div>' +
-        '</div>' +
-        '</div>' +
-        '</li>',
+    // template: '<li class="item-link item-content item_asset" data-id="{{IMEI}}">' +
+    //     '<div class="item-media">{{#if AppPhoto}}<img src="{{AppPhoto}}" alt="">{{else}}<img src="resources/images/svg_asset.svg" alt="">{{/if}} </div>' +
+    //     '<div class="item-inner">' +
+    //     '<div class="item-title-row">' +
+    //     '<div class="item-title">{{Name}}</div>' +
+    //     '</div>' +
+    //     '</div>' +
+    //     '</li>',
 });
 
 

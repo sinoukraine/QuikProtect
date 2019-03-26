@@ -284,7 +284,7 @@ var API_DOMIAN4 = "http://api.m2mglobaltech.com/Quikloc8/V1/";
 var API_URL = {};
 API_URL.URL_GET_LOGIN = API_DOMIAN1 + "Auth?account={0}&password={1}&appKey={2}&mobileToken={3}&deviceToken={4}&deviceType={5}";
 API_URL.URL_GET_LOGOUT = API_DOMIAN1 + "Logoff?MinorToken={0}&deviceToken={1}&mobileToken={2}";
-API_URL.URL_EDIT_ASSET = API_DOMIAN1 + "AssetEdit?MajorToken={0}&MinorToken={1}&imei={2}&name={3}&describe1={4}&describe2={5}&describe3={6}&describe4={7}&alias&photo";
+API_URL.URL_EDIT_ASSET = API_DOMIAN1 + "AssetEdit?MajorToken={0}&MinorToken={1}&imei={2}&name={3}&describe1={4}&describe2={5}&describe3={6}&describe4={7}&photo={8}&alias";
 API_URL.URL_ADD_ASSET = API_DOMIAN1 + "Activation?MajorToken={0}&MinorToken={1}&imei={2}&name={3}&describe1={4}&describe2={5}&describe3={6}&describe4={7}";
 
 //API_URL.URL_SET_ALARM = API_DOMIAN1 + "AlarmOptions?MajorToken={0}&MinorToken={1}&imei={2}&geolock={3}&shock={4}&crash={5}&power={6}";
@@ -596,6 +596,7 @@ $$(document).on('refresh', '.pull-to-refresh-content', function(e) {
 
 $$('.assets_list').on('click', '.item_asset', function() {
     TargetAsset.IMEI = $$(this).data("id");
+    TargetAsset.IMG = '';
     var assetList = getAssetList();
     var asset = assetList[TargetAsset.IMEI];
     var userCredits = getUserinfo().UserInfo.SMSTimes;
@@ -1090,12 +1091,17 @@ App.onPageInit('asset.edit', function(page) {
             encodeURIComponent($$(page.container).find('input[name="Describe1"]').val()),
             encodeURIComponent($$(page.container).find('input[name="Describe2"]').val()),
             encodeURIComponent($$(page.container).find('input[name="Describe3"]').val()),
-            encodeURIComponent($$(page.container).find('input[name="Describe4"]').val())
+            encodeURIComponent($$(page.container).find('input[name="Describe4"]').val()),
+            TargetAsset.IMG
         );
 
         JSON1.request(url, function(result) {
                 console.log(result);
                 if (result.MajorCode == '000') {
+                    if (TargetAsset.IMG) {
+                        deleteOldImg(TargetAsset.IMEI)
+                    }
+
                     if (assetImg.src !== 'resources/images/svg_add_photo_general.svg') {
                         result.Data.AppPhoto = assetImg.src;
                     }
@@ -1152,7 +1158,8 @@ App.onPageInit('asset.add', function(page) {
         JSON1.request(url, function(result) {
                 console.log(result);
                 if (result.MajorCode == '000') {
-                    asset.AppPhoto = assetImg.src;
+                    //asset.AppPhoto = assetImg.src;
+
                     updateAssetList(asset);
                     //setAssetImg(assetImg);
                     init_AssetList();
@@ -2401,7 +2408,7 @@ function getAssetImgSrc(asset) {
         var assetInfo = assetList[asset];
 
         if (assetInfo && assetInfo.Photo && pattern.test(assetInfo.Photo)) {
-            ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?' + new Date().getTime();
+            ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?v=' + new Date().getTime();
         }
 
     }
@@ -2430,7 +2437,7 @@ function getAssetIcoSrc(asset) {
             var assetInfo = assetList[asset];
             //console.log(assetInfo)
             if (assetInfo && assetInfo.Photo && pattern.test(assetInfo.Photo)) {
-                ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?' + new Date().getTime();
+                ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?v=' + new Date().getTime();
             }
         }
     }
@@ -3315,11 +3322,11 @@ function saveImg() {
     if (page.name == "asset" || page.name == "asset.edit") {
         if (TargetAsset.IMEI) {
             $$('.assets_list li[data-id="' + TargetAsset.IMEI + '"] .item-media img').attr('src', resImg);
-            var assetList = getAssetList();
-            var asset = assetList[TargetAsset.IMEI];
-            asset.Photo = resImg;
-            updateAssetList(asset);
-            deleteOldImg(TargetAsset.IMEI);
+            // var assetList = getAssetList();
+            // var asset = assetList[TargetAsset.IMEI];
+            // asset.Photo = resImg;
+            // updateAssetList(asset);
+            // deleteOldImg(TargetAsset.IMEI);
         }
     }
 
@@ -3342,7 +3349,7 @@ function saveImg() {
             result = typeof(result) == 'string' ? eval("(" + result + ")") : result;
             if (result.MajorCode == "000") {
                 console.log(result.Data);
-                TargetAsset.ASSET_IMG = result.Data;
+                TargetAsset.IMG = result.Data;
             } else {
                 App.alert('Something wrong. Photo not saved');
             }
@@ -3357,40 +3364,6 @@ function saveImg() {
 }
 
 
-
-// function getImage(source) {
-
-//     if (!navigator.camera) {
-//         alert("Camera API not supported", "Error");
-
-//     } else {
-//         var options = {
-//             quality: 50,
-//             destinationType: Camera.DestinationType.DATA_URL,
-//             sourceType: source, // 0:Photo Library, 1=Camera, 2=Saved Album
-//             encodingType: 0 // 0=JPG 1=PNG
-//         };
-
-//         navigator.camera.getPicture(
-//             function(imgData) {
-//                 //$('.media-object', this.$el).attr('src', "data:image/jpeg;base64,"+imgData);
-//                 mainView.router.load({
-//                     url: 'resources/templates/asset.edit.photo.html',
-//                     context: {
-//                         imgSrc: "data:image/jpeg;base64," + imgData
-//                     }
-//                 });
-
-//             },
-//             function() {
-//                 //alert('Error taking picture', 'Error');
-//             },
-//             options);
-//     }
-
-// }
-// setAssetImg(assetImg);
-// mainView.router.back();
 
 
 
