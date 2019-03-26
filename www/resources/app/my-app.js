@@ -877,7 +877,25 @@ App.onPageInit('asset', function(page) {
     var asset = assetList[TargetAsset.IMEI];
 
     $$('.upload_photo, .asset_img img').on('click', function() {
-        App.actions(cameraButtons);
+        // App.actions(cameraButtons);
+        assetList = getAssetList();
+        asset = assetList[TargetAsset.IMEI];
+
+        var assetImgSrc = getAssetImgSrc(TargetAsset.IMEI);
+
+        mainView.router.load({
+            url: 'resources/templates/asset.edit.html',
+            context: {
+                Name: asset.Name,
+                IMEI: asset.IMEI,
+                Describe1: asset.Describe1,
+                Describe2: asset.Describe2,
+                Describe3: asset.Describe3,
+                Describe4: asset.Describe4,
+                ImgSrc: assetImgSrc
+            }
+        });
+
     });
 
     $$('.loadPageAssetEdit').on('click', function() {
