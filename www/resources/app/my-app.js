@@ -298,6 +298,7 @@ API_URL.URL_SEND_COM_POS = API_DOMIAN2 + "SendPosCommand2.json?code={0}&imei={1}
 API_URL.URL_SEND_COM_STATUS = API_DOMIAN2 + "SendStatusCommand2.json?code={0}&imei={1}";
 //API_URL.URL_SET_GEOLOCK = API_DOMIAN1 + "SetGeoLock?MajorToken={0}&MinorToken={1}&imei={2}&state={3}";
 API_URL.URL_SET_GEOLOCK = API_DOMIAN1 + "setGeolock?MajorToken={0}&MinorToken={1}&imei={2}&state={3}";
+API_URL.URL_PHOTO_UPLOAD = "http://upload.quiktrak.co/image/Upload";
 
 API_URL.URL_GET_BALANCE = API_DOMIAN1 + "Balance?MajorToken={0}&MinorToken={1}";
 API_URL.URL_VERIFY_BY_EMAIL = API_DOMIAN1 + "VerifyCodeByEmail?email={0}";
@@ -3181,10 +3182,10 @@ function saveImg() {
     if (page.name == "asset" || page.name == "asset.edit") {
         if (TargetAsset.IMEI) {
             $$('.assets_list li[data-id="' + TargetAsset.IMEI + '"] .item-media img').attr('src', resImg);
-            var assetList = getAssetList();
-            var asset = assetList[TargetAsset.IMEI];
-            asset.AppPhoto = resImg;
-            updateAssetList(asset);
+            // var assetList = getAssetList();
+            // var asset = assetList[TargetAsset.IMEI];
+            // asset.AppPhoto = resImg;
+            // updateAssetList(asset);
         }
     }
 
