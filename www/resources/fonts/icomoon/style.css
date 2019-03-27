@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon.eot?l3aizw');
+  src:  url('icomoon.eot?l3aizw#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?l3aizw') format('truetype'),
+    url('icomoon.woff?l3aizw') format('woff'),
+    url('icomoon.svg?l3aizw#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-data:before {
+  content: "\e900";
+}
+.icon-direction:before {
+  content: "\e901";
+}
+.icon-distance:before {
+  content: "\e902";
+}
+.icon-geolock:before {
+  content: "\e903";
+}
+.icon-home:before {
+  content: "\e904";
+}
+.icon-logout:before {
+  content: "\e905";
+}
+.icon-menu:before {
+  content: "\e906";
+}
+.icon-position:before {
+  content: "\e907";
+}
+.icon-profile:before {
+  content: "\e908";
+}
+.icon-recharge:before {
+  content: "\e909";
+}
+.icon-search:before {
+  content: "\e90a";
+}
+.icon-settings:before {
+  content: "\e90b";
+}
+.icon-speed:before {
+  content: "\e90c";
+}
+.icon-status:before {
+  content: "\e90d";
+}
+.icon-upgrade:before {
+  content: "\e90e";
+}
+.icon-add:before {
+  content: "\e90f";
+}
+.icon-alarm:before {
+  content: "\e911";
+}
+.icon-arrow-back:before {
+  content: "\e912";
+}
+
