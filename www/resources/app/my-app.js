@@ -3190,8 +3190,8 @@ function saveImg() {
     }
 
     var assetImg = {
-        IMEI: 'IMEI_' + TargetAsset.IMEI,
-        src: resImg,
+        id: 'IMEI_' + TargetAsset.IMEI,
+        data: resImg,
     };
 
     $.ajax({
