@@ -1,110 +1,101 @@
-
-<div class="page bg-color-page asset_page" data-page="asset">
-	<div class="navbar theme-white color-black">
-        <div class="navbar-inner">
-            <div class="left">
-            	<a href="#" class="back link"> <i class="icon icon-back color-black"></i></a>
-            </div>
-            <div class="left navbar_title">{{Name}}</div>
-            <div class="right">
-            	<a href="#" class="link loadPageAssetEdit" id="" ><i class="f7-icons color-black">gear</i></a>
-            </div>
+<div class="navbar theme-white color-black">
+    <div class="navbar-inner">
+        <div class="left">
+        	<a href="#" class="back link"> <i class="icon icon-arrow-back"></i></a>
+        </div>
+        <div class="center sliding">{{Name}}</div>
+        <div class="right">
+        	<a href="#" class="link loadPageAssetEdit" id="" ><i class="icon icon-settings"></i></a>
         </div>
     </div>
-	<div class="page-content " >
-	    <div class="asset_top bg-white">
-	    	<div class="asset_img">
-	    		<img src="{{ImgSrc}}" name="photo" alt="">
-	    	</div>
-	    	<div class="upload_photo " >
-	    		<i class="f7-icons color-black">compose</i>
-	    	</div>
-	    	<p>IMEI: <span class="asset_imei">{{IMEI}}</span></p>
-	    </div>
+</div>
 
-	    <div class="list-block media-list asset_buttons">	        
-	        <ul>
-	            <li class="item-content">
-	              	<div class="item-media"><img src="resources/images/svg_status.svg" alt=""></div>
-	              	<div class="item-inner">
-	              		<div class="item-title-row">
-	              	  		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG01}}</div>
-	              	  		<div class="item-after">
-	                			<a href="#" class="button button-fill loadPageAssetStatus">{{@global.LANGUAGE.ASSET_MSG06}}</a>
-	                		</div>
-	              	  	</div>
-	              	</div>
-	            </li>
-	            <li class="item-content">
-	              	<div class="item-media"><img src="resources/images/svg_position.svg" alt=""></div>
-	              	<div class="item-inner">
-		            	<div class="item-title-row">
-		            		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG02}}</div>
-		              		<div class="item-after">
-		               			<a href="#" class="button button-fill loadPageAssetPosition">{{@global.LANGUAGE.ASSET_MSG06}}</a>
-		               		</div>
-		            	</div>	                
-	              	</div>
-	            </li>
-	            <li class="item-content">
-	              	<div class="item-media"><img src="resources/images/svg_alarm.svg" alt=""></div>
-	              	<div class="item-inner">
-	              		<div class="item-title-row">
-	                		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG03}}</div>
-	                		<div class="item-after">
-		               			<a href="#" class="button button-fill loadPageAssetAlarm">{{@global.LANGUAGE.ASSET_MSG06}}</a>
-		               		</div>
-	                	</div>
-	              	</div>
-	            </li>
-	            <li class="item-content">
-	              	<div class="item-media"><img src="resources/images/svg_geolock.svg" alt=""></div>
-	              	<div class="item-inner">
-	              		<div class="item-title-row">
-	                		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG08}}</div>
-	                		<div class="item-after">
-	                			<div class="row button_on_off_wrapper">
-									<a href="#" class="button button-fill col-50 setGeolockState {{#if Geolock}}disabled{{/if}}" data-state="on">{{@global.LANGUAGE.COM_MSG14}}</a>
-	            					<a href="#" class="button button-fill col-50 setGeolockState {{#unless Geolock}}disabled{{/unless}}" data-state="off">{{@global.LANGUAGE.COM_MSG15}}</a>
-	            					<!-- <a href="#" class="button button-fill col-50 setGeolockState " data-state="on">{{@global.LANGUAGE.COM_MSG14}}</a>
-	            					<a href="#" class="button button-fill col-50 setGeolockState " data-state="off">{{@global.LANGUAGE.COM_MSG15}}</a> -->
-	                			</div>
-	            			               			
-	            		    </div>
-	                	</div>
-	              	</div>
-	            </li>
-	            <!-- <li class="item-content">
-	              	<div class="item-media"><img src="resources/images/svg_door.svg" alt=""></div>
-	              	<div class="item-inner">
-	              		<div class="item-title-row">
-	                		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG10}}</div>
-	                		<div class="item-after">
-	                			<div class="row button_on_off_wrapper">
-	            									<a href="#" class="button button-fill col-50 setDoorState {{#if Doorlock}}disabled{{/if}}" data-state="lock">{{@global.LANGUAGE.COM_MSG14}}</a>
-	            					<a href="#" class="button button-fill col-50 setDoorState {{#unless Doorlock}}disabled{{/unless}}" data-state="unlock">{{@global.LANGUAGE.COM_MSG15}}</a>
-	                			</div>	            			               			
-	            		    </div>
-	                	</div>
-	              	</div>
-	            </li> -->
-	            <li class="item-content">
-	              	<div class="item-media"><img src="resources/images/svg_upgrade.svg" alt=""></div>
-	              	<div class="item-inner">
-	              		<div class="item-title-row">
-	                		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG04}}</div>
-	                		<div class="item-after">
-		               			<a href="resources/templates/upgrade.html" class="button button-fill">{{@global.LANGUAGE.ASSET_MSG07}}</a>
-		               		</div>
-	                	</div>
-	              	</div>
-	            </li>	                  
-	                      
-	        </ul>	        
-	    </div>
-	    <div class="content-block remaining_wrapper">
-	        <p>{{@global.LANGUAGE.COM_MSG01}}: <span class="user_credits">{{Credits}}</span></p>
-	    </div>
-	      
+<div class="pages">
+	<div class="page bg-color-page asset_page" data-page="asset">
+		
+		<div class="page-content " >
+		    <div class="asset_top bg-white">
+		    	<div class="asset_img">
+		    		<img src="{{ImgSrc}}" name="photo" alt="">
+		    	</div>
+		    	<div class="upload_photo " >
+		    		<i class="f7-icons">compose</i>
+		    	</div>
+		    	<p>IMEI: <span class="asset_imei">{{IMEI}}</span></p>
+		    </div>
+
+		    <div class="list-block media-list color-white asset_buttons">	        
+		        <ul>
+		            <li class="item-content">
+		              	<div class="item-media"><i class="icon icon-status"></i>	<!-- <img src="resources/images/svg_status.svg" alt=""> --></div>
+		              	<div class="item-inner">
+		              		<div class="item-title-row">
+		              	  		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG01}}</div>
+		              	  		<div class="item-after">
+		                			<a href="#" class="button button-fill bg-dealer loadPageAssetStatus">{{@global.LANGUAGE.ASSET_MSG06}}</a>
+		                		</div>
+		              	  	</div>
+		              	</div>
+		            </li>
+		            <li class="item-content">
+		              	<div class="item-media"><i class="icon icon-position"></i> <!-- <img src="resources/images/svg_position.svg" alt=""> --></div>
+		              	<div class="item-inner">
+			            	<div class="item-title-row">
+			            		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG02}}</div>
+			              		<div class="item-after">
+			               			<a href="#" class="button button-fill bg-dealer loadPageAssetPosition">{{@global.LANGUAGE.ASSET_MSG06}}</a>
+			               		</div>
+			            	</div>	                
+		              	</div>
+		            </li>
+		            <li class="item-content">
+		              	<div class="item-media"><i class="icon icon-alarm"></i> <!-- <img src="resources/images/svg_alarm.svg" alt=""> --></div>
+		              	<div class="item-inner">
+		              		<div class="item-title-row">
+		                		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG03}}</div>
+		                		<div class="item-after">
+			               			<a href="#" class="button button-fill bg-dealer loadPageAssetAlarm">{{@global.LANGUAGE.ASSET_MSG06}}</a>
+			               		</div>
+		                	</div>
+		              	</div>
+		            </li>
+		            <li class="item-content">
+		              	<div class="item-media"><i class="icon icon-geolock"></i> <!-- <img src="resources/images/svg_geolock.svg" alt=""> --></div>
+		              	<div class="item-inner">
+		              		<div class="item-title-row">
+		                		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG08}}</div>
+		                		<div class="item-after">
+		                			<div class="row button_on_off_wrapper">
+		                				<a href="#" class="button button-fill col-50 bg-dealer setGeolockState {{#if Geolock}}disabled{{/if}} " data-state="on">{{@global.LANGUAGE.COM_MSG14}}</a>
+		                				<a href="#" class="button button-fill col-50 bg-dealer setGeolockState {{#if Geolock}}{{else}}disabled{{/if}}" data-state="off">{{@global.LANGUAGE.COM_MSG15}}</a>
+		                				<!-- <a href="#" class="button button-fill col-50 bg-dealer setGeolockState " data-state="on">{{@global.LANGUAGE.COM_MSG14}}</a>
+		                								               			<a href="#" class="button button-fill col-50 bg-dealer setGeolockState " data-state="off">{{@global.LANGUAGE.COM_MSG15}}</a> -->
+		                			</div>
+				               			
+			               		</div>
+		                	</div>
+		              	</div>
+		            </li>
+		            <!-- <li class="item-content">
+		                                	<div class="item-media"><img src="resources/images/svg_upgrade.svg" alt=""></div>
+		                                	<div class="item-inner">
+		                                		<div class="item-title-row">
+		                                  		<div class="item-title">{{@global.LANGUAGE.ASSET_MSG04}}</div>
+		                                  		<div class="item-after">
+		                              			               			<a href="resources/templates/upgrade.html"  class="button button-fill bg-dealer">{{@global.LANGUAGE.ASSET_MSG07}}</a>
+		                              			               		</div>
+		                                  	</div>
+		                                	</div>
+		                              </li>	 -->                  
+		                      
+		        </ul>	        
+		    </div>
+		    {{#if rcFlag}}
+		    <div class="content-block remaining_wrapper">
+		        <p>{{@global.LANGUAGE.COM_MSG01}}: <span class="user_credits">{{Credits}}</span></p>
+		    </div>
+		    {{/if}}
+		      
+		</div>
 	</div>
 </div>
