@@ -23,6 +23,11 @@ Helper ={
             popupAnchor:  [0, -60] // point from which the popup should open relative to the iconAnchor
         })
     ],
+    StatusNewEnum:{
+        "geolock" : 1,
+        "immob": 2,
+        "doorlock": 4,
+    },
     getDirectionCardinal: function(direction){
             var ret = "";
             direction = parseFloat(direction);
@@ -99,6 +104,7 @@ Helper ={
         }
         return ret;
     },
+
     getAddressByGeocoder: function(latlng,replyFunc){
         var url = "https://nominatim.sinopacific.com.ua/reverse.php?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1".format(latlng.lat, latlng.lng);
         var coords = latlng.lat + ', '+ latlng.lng;
