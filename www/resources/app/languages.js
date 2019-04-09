@@ -107,8 +107,7 @@ window.LanguagePackages= {
 		"ASSET_MSG06": "Show",
 		"ASSET_MSG07": "Upgrade",
 		"ASSET_MSG08": "Geolock",
-		"ASSET_MSG09": "Immobilization",
-		"ASSET_MSG10": "Lock Door",				
+		"ASSET_MSG09": "Immobilization",				
 
 		"STATUS_MSG00": 'Status',
 		"STATUS_MSG01": 'IMEI',
