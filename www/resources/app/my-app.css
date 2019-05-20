@@ -95,7 +95,7 @@ body.with-panel-left-cover .panel-overlay{
 	background: #c8c7cc;
 }
 .statusbar-overlay {
-    background: #424242;
+    background: #fff;
     -webkit-transition: 400ms;
     transition: 400ms;
 }
