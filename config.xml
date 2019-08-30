@@ -49,7 +49,7 @@
     <plugin name="cordova-plugin-buildinfo" source="npm" spec="2.0.2" />    
     <plugin name="cordova-plugin-dialogs" source="npm" spec="1.2.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="1.2.1" />
-    <plugin name="cordova-plugin-splashscreen" source="npm" spec="5.0.2" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="5.0.3" />
     <plugin name="cordova-plugin-camera" source="npm" spec="4.0.3"  />
     <plugin spec="https://github.com/phonegap/phonegap-mobile-accessibility.git" source="git" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.1.0"  />
