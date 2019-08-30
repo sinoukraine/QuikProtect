@@ -53,7 +53,7 @@
     <plugin name="cordova-plugin-camera" source="npm" spec="4.0.3"  />
     <plugin spec="https://github.com/phonegap/phonegap-mobile-accessibility.git" source="git" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.1.0"  />
-    <plugin name="cordova-plugin-wkwebview-engine" source="npm" spec="1.2.1"  />
+    <!-- <plugin name="cordova-plugin-wkwebview-engine" source="npm" spec="1.2.1"  /> -->
 
     <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
             <string>You can take a photo of your asset using camera and upload it into the app</string>
@@ -71,11 +71,11 @@
         <false/>
     </config-file>
   
-    <feature name="CDVWKWebViewEngine">
+    <!-- <feature name="CDVWKWebViewEngine">
       <param name="ios-package" value="CDVWKWebViewEngine" />
     </feature>
-
-    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    
+    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" /> -->
 
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
