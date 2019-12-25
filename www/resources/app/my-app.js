@@ -112,7 +112,7 @@ function setupPush() {
             //"senderID": "264121929701"                             
         },
         "browser": {
-            pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+            pushServiceURL: 'https://push.api.phonegap.com/v1/push'
         },
         "ios": {
             "sound": true,
@@ -273,15 +273,15 @@ var statusCommand = 1;
 var virtualAssetList = null;
 var virtualNotificationList = null;
 var verifyCheck = {}; // for password reset
-var URL_REGISTRATION = "http://app.quikprotect.co/activation/register?";
+var URL_REGISTRATION = "https://app.quikprotect.co/activation/register?";
 var PAYPAL_URL = {};
 PAYPAL_URL.UPGRADELINK1 = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9SFVGM2W2LFZC"; //REAL subscription link
 PAYPAL_URL.UPGRADELINK2 = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UT749QS8G4PLU"; // REAL subscription link
 
-var API_DOMIAN1 = "http://api.m2mglobaltech.com/QuikProtect/V1/Client/";
-var API_DOMIAN2 = "http://quiktrak.co/webapp/QuikProtect/Api2/";
-var API_DOMIAN3 = "http://api.m2mglobaltech.com/QuikTrak/V1/";
-var API_DOMIAN4 = "http://api.m2mglobaltech.com/Quikloc8/V1/";
+var API_DOMIAN1 = "https://api.m2mglobaltech.com/QuikProtect/V1/Client/";
+var API_DOMIAN2 = "https://quiktrak.co/webapp/QuikProtect/Api2/";
+var API_DOMIAN3 = "https://api.m2mglobaltech.com/QuikTrak/V1/";
+var API_DOMIAN4 = "https://api.m2mglobaltech.com/Quikloc8/V1/";
 var API_URL = {};
 API_URL.URL_GET_LOGIN = API_DOMIAN1 + "Auth?account={0}&password={1}&appKey={2}&mobileToken={3}&deviceToken={4}&deviceType={5}";
 API_URL.URL_GET_LOGOUT = API_DOMIAN1 + "Logoff?MinorToken={0}&deviceToken={1}&mobileToken={2}";
@@ -304,16 +304,16 @@ API_URL.URL_SET_GEOLOCK = API_DOMIAN1 + "setGeolock?MajorToken={0}&MinorToken={1
 API_URL.URL_SET_IMMOBILISATION = API_DOMIAN1 + "Relay?MinorToken={0}&imei={1}&state={2}";
 
 API_URL.URL_SET_DOOR = API_DOMIAN4 + "asset/door?MajorToken={0}&MinorToken={1}&code={2}&state={3}";
-API_URL.URL_PHOTO_UPLOAD = "http://upload.quiktrak.co/image/Upload";
+API_URL.URL_PHOTO_UPLOAD = "https://upload.quiktrak.co/image/Upload";
 API_URL.URL_GET_BALANCE = API_DOMIAN1 + "Balance?MajorToken={0}&MinorToken={1}";
 API_URL.URL_VERIFY_BY_EMAIL = API_DOMIAN1 + "VerifyCodeByEmail?email={0}";
 API_URL.URL_RESET_PASSWORD = API_DOMIAN1 + "ForgotPassword?account={0}&newPassword={1}&checkNum={2}";
 API_URL.URL_PREUPGRADE = API_DOMIAN1 + "PreUpgrade?MajorToken={0}&MinorToken={1}&imei={2}";
 API_URL.URL_UPGRADE = API_DOMIAN1 + "Upgrade?MajorToken={0}&MinorToken={1}&imei={2}";
 API_URL.URL_GET_NEW_NOTIFICATIONS = API_DOMIAN1 + "Alarms?MinorToken={0}&deviceToken={1}";
-API_URL.URL_GET_ADDR_BY_GEO1 = "http://map.quiktrak.co/reverse.php?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1";
-API_URL.URL_GET_ADDR_BY_GEO2 = "http://nominatim.openstreetmap.org/reverse?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1";
-API_URL.URL_SUPPORT = "http://support.quiktrak.eu/?name={0}&loginName={1}&email={2}&phone={3}&s={4}";
+API_URL.URL_GET_ADDR_BY_GEO1 = "https://map.quiktrak.co/reverse.php?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1";
+API_URL.URL_GET_ADDR_BY_GEO2 = "https://nominatim.openstreetmap.org/reverse?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1";
+API_URL.URL_SUPPORT = "https://support.quiktrak.eu/?name={0}&loginName={1}&email={2}&phone={3}&s={4}";
 
 API_URL.URL_ROUTE = "https://www.google.com/maps/dir/?api=1&destination={0},{1}"; //&travelmode=walking
 API_URL.URL_REFRESH_TOKEN = API_DOMIAN3 + "User/RefreshToken";
@@ -2500,7 +2500,7 @@ function getAssetImgSrc(asset) {
         var assetInfo = assetList[asset];
 
         if (assetInfo && assetInfo.Photo && pattern.test(assetInfo.Photo)) {
-            ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?v=' + new Date().getTime();
+            ret = 'https://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?v=' + new Date().getTime();
         }
 
     }
@@ -2529,7 +2529,7 @@ function getAssetIcoSrc(asset) {
             var assetInfo = assetList[asset];
             //console.log(assetInfo)
             if (assetInfo && assetInfo.Photo && pattern.test(assetInfo.Photo)) {
-                ret = 'http://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?v=' + new Date().getTime();
+                ret = 'https://upload.quiktrak.co/Attachment/images/' + assetInfo.Photo + '?v=' + new Date().getTime();
             }
         }
     }
