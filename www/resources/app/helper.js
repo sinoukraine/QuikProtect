@@ -105,6 +105,7 @@ Helper ={
         }
         return ret;
     },
+
     getAddressByGeocoder: function(latlng,replyFunc){
         var url = "https://nominatim.sinopacific.com.ua/reverse.php?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1".format(latlng.lat, latlng.lng);
         var coords = latlng.lat + ', '+ latlng.lng;
