@@ -71,7 +71,6 @@ window.LanguagePackages= {
 		"PROMPT_MSG055": "Alarm activation and notifications utilise credits. Ignition On and Off alarms may drain credits rapidly",
 		"PROMPT_MSG056": "Important alarm notice",
 
-
 		"LOGIN_MSG01": "The login(email) or password you entered is incorrect.",
 		"LOGIN_MSG02": "Login Name / Email",
 		"LOGIN_MSG03": "Password",
@@ -110,8 +109,7 @@ window.LanguagePackages= {
 		"ASSET_MSG06": "Show",
 		"ASSET_MSG07": "Upgrade",
 		"ASSET_MSG08": "Geolock",
-		"ASSET_MSG09": "Immobilization",
-		"ASSET_MSG10": "Lock Door",				
+		"ASSET_MSG09": "Immobilization",				
 
 		"STATUS_MSG00": 'Status',
 		"STATUS_MSG01": 'IMEI',
@@ -153,6 +151,7 @@ window.LanguagePackages= {
 		
 		"ALARM_MSG17": "Low Battery",
 		"ALARM_MSG18": "Toggle All",
+
 
 		"ADD_EDIT_MSG00": "Information",
 		"ADD_EDIT_MSG01": "Asset Name",		
