@@ -9,7 +9,14 @@
     		          
     	</div>
   	</div>
+
   	<div class="page-content">
+		<!--<div class="content-block-title">{{@global.LANGUAGE.ALARM_MSG01}}</div>
+		<div class="content-block">
+			<p class="color-white">{{@global.LANGUAGE.PROMPT_MSG055}}</p>
+		</div>-->
+		<div class="content-block-title color-red showAlarmNotice" >{{@global.LANGUAGE.PROMPT_MSG056}}</div>
+
   		
   		<div class="list-block no-hairlines-between no-hairlines media-list alarm_list"> 
   				
@@ -18,7 +25,7 @@
   				<li class="item-content alarm_title">	            	           		
 	           		<div class="item-inner">
 	            		<div class="item-title-row">
-	            	  		<div class="item-title color-white">{{@global.LANGUAGE.ALARM_MSG01}}</div>
+	            	  		<div class="item-title color-white">{{@global.LANGUAGE.ALARM_MSG18}}</div>
 	            	  		<div class="item-after">
 	            	  			<label class="label-switch no-fastclick ">
 		            	  			<input type="checkbox" name="checkbox-alarm" {{#if Alarm}}checked="checked"{{/if}}>

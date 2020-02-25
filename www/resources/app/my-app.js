@@ -471,7 +471,9 @@ $$('.button_search').on('click', function() {
     $$('.searchbar').addClass('fadeInDown').show();
     $$('.searchbar input').focus();
 });
-
+$$('body').on('click', '.showAlarmNotice', function() {
+    showModalMessage(LANGUAGE.ALARM_MSG01, LANGUAGE.PROMPT_MSG055);
+});
 $$('body').on('click', '.routeButton', function() {
     var that = $$(this);
     var lat = that.data('Lat');
