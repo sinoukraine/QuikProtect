@@ -13,7 +13,9 @@
 <div class="pages">
     <div class="page bg-color-page alarm_page" data-page="alarms.select">
       	<div class="page-content">
+            {{#if rcFlag}}
             <div class="content-block-title color-red showAlarmNotice" >{{@global.LANGUAGE.PROMPT_MSG056}}</div>
+            {{/if}}
             <input type="hidden" name="Assets" value="{{Assets}}">
             <div class="list-block no-hairlines-between no-hairlines media-list color-white alarm_list"> 
                     

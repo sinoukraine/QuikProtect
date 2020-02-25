@@ -10,8 +10,9 @@
 <div class="pages">
 	<div class="page bg-color-page alarm_page" data-page="asset.alarm">
 	  	<div class="page-content">
+			{{#if rcFlag}}
 			<div class="content-block-title color-red showAlarmNotice" >{{@global.LANGUAGE.PROMPT_MSG056}}</div>
-
+			{{/if}}
 	  		<div class="list-block media-list no-hairlines no-hairlines-between color-white alarm_list"> 
 	  				
 	  			<ul>

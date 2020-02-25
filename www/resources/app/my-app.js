@@ -1357,7 +1357,8 @@ App.onPageInit('alarms.assets', function(page) {
             mainView.router.load({
                 url: 'resources/templates/alarms.select.html',
                 context: {
-                    Assets: assets.toString()
+                    Assets: assets.toString(),
+                    rcFlag: localStorage.elem_rc_flag,
                 }
             });
         } else {
@@ -2621,6 +2622,7 @@ function loadPageAssetAlarm() {
             AccOff: alarms.accOff.state,
             AccOn: alarms.accOn.state,
             LowBattery: alarms.lowBattery.state,
+            rcFlag: localStorage.elem_rc_flag,
         }
     });
 }
