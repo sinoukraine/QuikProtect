@@ -1,123 +1,119 @@
-<div class="navbar theme-white color-black">
-    <div class="navbar-inner">
-        <div class="left">
-        	<a href="#" class="back link"> <i class="icon icon-arrow-back"></i></a>
+<div class="page bg-color-page status_page" data-page="asset.status">
+	<div class="navbar theme-white color-black">
+        <div class="navbar-inner">
+            <div class="left">
+            	<a href="#" class="back link"> <i class="icon icon-back color-black"></i></a>
+            </div>
+            <div class="left navbar_title navbar_title_long">{{AssetName}}</div>
+            <!-- <div class="right">
+              <i class="f7-icons">search_strong</i>
+            </div> -->
         </div>
-        <div class="center sliding">{{AssetName}}</div>
-        <!-- <div class="right">
-          <i class="f7-icons">search_strong</i>
-        </div> -->
     </div>
-</div>
-<div class="pages">
-	<div class="page bg-color-page status_page" data-page="asset.status">
-		
-	    <div class="page-content">
-	    	<input type="hidden" name="Acc" value="{{Acc}}">
-	        <input type="hidden" name="Relay" value="{{Relay}}">
-	        <input type="hidden" name="Charger" value="{{Charger}}">
-	        <input type="hidden" name="Battery" value="{{Battery}}">
-	        <input type="hidden" name="Power" value="{{Power}}">
-	        <input type="hidden" name="GPS" value="{{GPS}}">
-	        <input type="hidden" name="GSM" value="{{GSM}}">
-	        <input type="hidden" name="GPRS" value="{{GPRS}}">
+    <div class="page-content">
+    	<input type="hidden" name="Acc" value="{{Acc}}">
+        <input type="hidden" name="Relay" value="{{Relay}}">
+        <input type="hidden" name="Charger" value="{{Charger}}">
+        <input type="hidden" name="Battery" value="{{Battery}}">
+        <input type="hidden" name="Power" value="{{Power}}">
+        <input type="hidden" name="GPS" value="{{GPS}}">
+        <input type="hidden" name="GSM" value="{{GSM}}">
+        <input type="hidden" name="GPRS" value="{{GPRS}}">
 
 
 
-	    	<div class="content-block text-a-c">
-	    		<h2 class="color-white">{{@global.LANGUAGE.ASSET_MSG01}}</h2>
-	    		<img class="status_img" src="resources/images/svg_status2.svg" alt="">
-	    		<p class="color-white">IMEI: <span class="asset_imei">{{Imei}}</span></p>
-	    	</div>
+    	<div class="content-block text-a-c">
+    		<h2>{{@global.LANGUAGE.ASSET_MSG01}}</h2>
+    		<img class="status_page_svg_status" src="resources/images/svg_status2.svg" alt="">
+    		<p>IMEI: <span class="asset_imei">{{Imei}}</span></p>
+    	</div>
 
-	    	<div class="list-block inset status_list">
-				<ul>			
-					{{#if CreateDateTime}}  
-					<li class="item-content">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG04}}</div>
-						    <div class="item-after">{{CreateDateTime}}</div>	
-						</div>
-					</li>	
-					{{/if}} 
-					{{#if Imsi}}  
-					<li class="item-content">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG02}}</div>
-						    <div class="item-after">{{Imsi}}</div>	
-						</div>
-					</li>	
-					{{/if}} 
-					{{#if Acc}}  
-					<li class="item-content open-acc">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG05}}</div>
-						    <div class="item-after">{{Acc}}</div>	
-						</div>
-					</li>	
-					{{/if}} 
-	                {{#if Relay}}   
-					<li class="item-content open-relay">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG06}}</div>
-						    <div class="item-after">{{Relay}}</div>	
-						</div>
-					</li>	
-	                {{/if}} 
-	                {{#if Battery}}
-					<li class="item-content open-battery">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG07}}</div>
-						    <div class="item-after">{{Battery}}</div>	
-						</div>
-					</li>	
-	                {{/if}} 
-	                {{#if Charger}}
-					<li class="item-content open-charger">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG08}}</div>
-						    <div class="item-after">{{Charger}}</div>	
-						</div>
-					</li>	
-	                {{/if}} 
-	                {{#if Power}}  
-					<li class="item-content open-power">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG09}}</div>
-						    <div class="item-after">{{Power}}</div>	
-						</div>
-					</li>	
-	                {{/if}} 
-	                {{#if GPS}} 
-					<li class="item-content open-gps">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG10}}</div>
-						    <div class="item-after">{{GPS}}</div>	
-						</div>
-					</li>	
-					{{/if}} 
-	                {{#if GSM}} 
-					<li class="item-content open-gsm">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG11}}</div>
-						    <div class="item-after">{{GSM}}</div>	
-						</div>
-					</li>	
-					{{/if}} 
-	                {{#if GPRS}}  
-					<li class="item-content open-gprs">
-						<div class="item-inner">
-							<div class="item-title">{{@global.LANGUAGE.STATUS_MSG12}}</div>
-						    <div class="item-after">{{GPRS}}</div>	
-						</div>
-					</li>	
-					{{/if}}   
-					    		
+    	<div class="list-block inset status_list">
+			<ul>			
+				{{#if CreateDateTime}}  
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG04}}</div>
+					    <div class="item-after">{{CreateDateTime}}</div>	
+					</div>
+				</li>	
+				{{/if}} 
+				{{#if Imsi}}  
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG02}}</div>
+					    <div class="item-after">{{Imsi}}</div>	
+					</div>
+				</li>	
+				{{/if}} 
+				{{#if Acc}}  
+				<li class="item-content open-acc">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG05}}</div>
+					    <div class="item-after">{{Acc}}</div>	
+					</div>
+				</li>	
+				{{/if}} 
+                {{#if Relay}}   
+				<li class="item-content open-relay">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG06}}</div>
+					    <div class="item-after">{{Relay}}</div>	
+					</div>
+				</li>	
+                {{/if}} 
+                {{#if Battery}}
+				<li class="item-content open-battery">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG07}}</div>
+					    <div class="item-after">{{Battery}}</div>	
+					</div>
+				</li>	
+                {{/if}} 
+                {{#if Charger}}
+				<li class="item-content open-charger">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG08}}</div>
+					    <div class="item-after">{{Charger}}</div>	
+					</div>
+				</li>	
+                {{/if}} 
+                {{#if Power}}  
+				<li class="item-content open-power">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG09}}</div>
+					    <div class="item-after">{{Power}}</div>	
+					</div>
+				</li>	
+                {{/if}} 
+                {{#if GPS}} 
+				<li class="item-content open-gps">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG10}}</div>
+					    <div class="item-after">{{GPS}}</div>	
+					</div>
+				</li>	
+				{{/if}} 
+                {{#if GSM}} 
+				<li class="item-content open-gsm">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG11}}</div>
+					    <div class="item-after">{{GSM}}</div>	
+					</div>
+				</li>	
+				{{/if}} 
+                {{#if GPRS}}  
+				<li class="item-content open-gprs">
+					<div class="item-inner">
+						<div class="item-title">{{@global.LANGUAGE.STATUS_MSG12}}</div>
+					    <div class="item-after">{{GPRS}}</div>	
+					</div>
+				</li>	
+				{{/if}}   
+				    		
 
-				</ul>
-			</div>    
-  
+			</ul>
+		</div>    
 
-	    </div>
-	</div>
+    </div>
 </div>
